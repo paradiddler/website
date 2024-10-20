@@ -1,0 +1,139 @@
+/* Basic styles for body */
+.main-body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #adadad; /* Gray background */
+    color: #000000; /* Black text */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Center container with gray background in the middle */
+.center-container {
+    background-color: #FFFFFF; /* White background */
+    padding: 40px;
+    text-align: center;
+    width: 100%; /* Ensure responsiveness */
+}
+
+/* Logo styling */
+.logo {
+    max-width: 200px; /* Adjust the size as needed */
+    margin-bottom: 20px;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px; /* Space between links */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #000000; /* Black text */
+    font-weight: bold;
+}
+
+/* Divider styling: Three equal sections with yellow, green, blue colors */
+.divider {
+    display: flex;
+    width: 100%; /* Full width of the screen */
+    height: 5px;
+}
+
+.divider div {
+    flex: 1;
+    height: 100%;
+}
+
+.divider .yellow {
+    background-color: #f3c300; /* Yellow */
+}
+
+.divider .green {
+    background-color: #00ab9f; /* Green */
+}
+
+.divider .blue {
+    background-color: #2e6db4; /* Blue */
+}
+
+/* About page styles */
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FFFFFF; /* White background */
+    position: relative;
+    overflow: hidden; /* Ensure "Nazmi" stays within the screen bounds */
+}
+
+.about-page section {
+    text-align: center; /* Center the text */
+    z-index: 2; /* Ensure the main content stays above the moving text */
+}
+
+.about-page h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-page p {
+    font-size: 18px;
+    color: #000000; /* Plain black text */
+}
+
+/* Moving "Nazmi" background text */
+#nazmi-text {
+    position: absolute;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f3c300; /* Start with yellow */
+    opacity: 0.9; /* Light text */
+    z-index: 1;
+    left: 0; /* Start from the left */
+    top: 0; /* Start from the top */
+}
+/* Blog list styling */
+.blog-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.blog-list li {
+    margin-bottom: 10px;
+}
+
+.blog-list a {
+    color: #2e6db4;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.blog-list a:hover {
+    color: #00ab9f;
+}
+.blog-container {
+    background-color: #FFFFFF;
+    padding: 40px;
+    width: 80%;
+    margin: 40px auto;
+    text-align: left;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
