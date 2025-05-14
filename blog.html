@@ -14,7 +14,7 @@
   <h1>nazmi blog</h1>
   <ul class="blog-list">
     <li><a href="/posts/cool-music.html" data-post="cool-music.html">cool music</a></li>
-    <li><a href="/posts/hello-web_2024-10-20-1420.html" data-post="hello-web_2024-10-20-1420.html">a</a></li>
+    <li><a href="/posts/hello-web_2024-10-20-1420.html" data-post="hello-web_2024-10-20-1420.html">hello web</a></li>
   </ul>
 
   <div id="blog-container">
@@ -22,23 +22,26 @@
 
   <script>
     const container = document.getElementById('blog-container');
-
+  
     async function loadPost(file, push = true) {
       try {
         const res = await fetch('posts/' + file);
+        if (!res.ok) throw new Error("HTTP error " + res.status);
         const html = await res.text();
         container.innerHTML = html;
-
+  
         if (push) {
-          history.pushState({ file }, '', `/posts/${file}`);
+          // Use query string to avoid full page reloads
+          const newUrl = `?post=${encodeURIComponent(file)}`;
+          history.pushState({ file }, '', newUrl);
         }
       } catch (e) {
         container.innerHTML = '<p>⚠️ Failed to load blog post.</p>';
         console.error(e);
       }
     }
-
-    // Intercept clicks on blog links
+  
+    // Handle blog link clicks
     document.querySelectorAll('a[data-post]').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
@@ -46,8 +49,8 @@
         loadPost(file);
       });
     });
-
-    // Handle browser back/forward buttons
+  
+    // Handle back/forward navigation
     window.addEventListener('popstate', e => {
       if (e.state?.file) {
         loadPost(e.state.file, false);
@@ -55,13 +58,13 @@
         container.innerHTML = '<p>Select a blog post to read it here...</p>';
       }
     });
-
-    // On page load, handle direct links like /posts/post1.html
+  
+    // On page load, check query string like ?post=cool-music.html
     window.addEventListener('DOMContentLoaded', () => {
-      const path = location.pathname;
-      const match = path.match(/\/posts\/(.+\.html)/);
-      if (match) {
-        loadPost(match[1], false);
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('post');
+      if (file) {
+        loadPost(file, false);
       }
     });
   </script>
