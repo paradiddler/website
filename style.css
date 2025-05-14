@@ -11,8 +11,9 @@
     height: 100vh;
     flex-direction: column;
 }
-.a{
-    color:#cccccc
+a{
+    color:#a8a8a8;
+    text-decoration: underline;
 }
 
 
@@ -109,8 +110,7 @@ nav ul li a {
 }
 
 .blog-list a {
-    color: #575757;
-    text-decoration: underline;
+    color: #888888;
     font-size: 20px;
 }
 
