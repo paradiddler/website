@@ -1,8 +1,8 @@
 /* Basic styles for body */
 .main-body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #adadad; /* Gray background */
-    color: #000000; /* Black text */
+    background-color: #282828; 
+    color: #cccccc; /* Black text */
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,10 +11,12 @@
     height: 100vh;
     flex-direction: column;
 }
+.a{
+    color:#cccccc
+}
 
 /* Center container with gray background in the middle */
 .center-container {
-    background-color: #FFFFFF; /* White background */
     padding: 40px;
     text-align: center;
     width: 100%; /* Ensure responsiveness */
@@ -39,32 +41,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none; /* Remove underline */
-    color: #000000; /* Black text */
+    color: #cccccc; /* Black text */
     font-weight: bold;
-}
-
-/* Divider styling: Three equal sections with yellow, green, blue colors */
-.divider {
-    display: flex;
-    width: 100%; /* Full width of the screen */
-    height: 5px;
-}
-
-.divider div {
-    flex: 1;
-    height: 100%;
-}
-
-.divider .yellow {
-    background-color: #f3c300; /* Yellow */
-}
-
-.divider .green {
-    background-color: #00ab9f; /* Green */
-}
-
-.divider .blue {
-    background-color: #2e6db4; /* Blue */
 }
 
 /* About page styles */
@@ -73,7 +51,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #FFFFFF; /* White background */
+    background-color: #282828;
     position: relative;
     overflow: hidden; /* Ensure "Nazmi" stays within the screen bounds */
 }
@@ -84,6 +62,7 @@ nav ul li a {
 }
 
 .about-page h1 {
+    color: #cccccc;
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 20px;
@@ -91,7 +70,7 @@ nav ul li a {
 
 .about-page p {
     font-size: 18px;
-    color: #000000; /* Plain black text */
+    color: #cccccc;
 }
 
 /* Moving "Nazmi" background text */
@@ -128,7 +107,7 @@ nav ul li a {
     color: #00ab9f;
 }
 .blog-container {
-    background-color: #FFFFFF;
+    background-color: #222222;
     padding: 40px;
     width: 80%;
     margin: 40px auto;
