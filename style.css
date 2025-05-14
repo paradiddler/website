@@ -109,8 +109,8 @@ nav ul li a {
 }
 
 .blog-list a {
-    color: #2e6db4;
-    text-decoration: none;
+    color: #575757;
+    text-decoration: underline;
     font-size: 20px;
 }
 
