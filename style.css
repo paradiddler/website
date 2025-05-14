@@ -85,15 +85,23 @@ nav ul li a {
     top: 0; /* Start from the top */
 }
 /* Blog list styling */
-.blog-body{
-    background-color: #282828;
+.blog-body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #282828; 
+    color: #cccccc; 
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    flex-direction: column;
 }
 .blog-list {
     list-style-type: none;
     padding: 0;
     text-align: left;
     max-width: 400px;
-    margin: 0 auto;
 }
 
 .blog-list li {
@@ -115,5 +123,11 @@ nav ul li a {
     margin: 40px auto;
     text-align: left;
     border-radius: 5px;
+}
+
+/* Simple fade-in animation */
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 

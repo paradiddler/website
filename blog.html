@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>blog</title>
@@ -10,18 +10,60 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
 </head>
-<body class="main-body">
+<body class="blog-body">
+  <h1>nazmi blog</h1>
+  <ul class="blog-list">
+    <li><a href="/posts/cool-music.html" data-post="cool-music.html">cool music</a></li>
+    <li><a href="/posts/hello-web_2024-10-20-1420.html" data-post="hello-web_2024-10-20-1420.html">a</a></li>
+  </ul>
 
+  <div id="blog-container">
+  </div>
 
-    <div class="center-container">
-        <h1>blog</h1>
-        <ul class="blog-list">
-            <li>20-10-2024 22:06 - <a href="blogs/buy me these.html">buy me these</a></li>
-            <li>updated - <a href="blogs/cool-music.html">cool music</a></li>
-            <li>20-10-2024 17:20 - <a href="blogs/hello-web_2024-10-20-1420.html">hello web</a></li>
-            <li>20-10-2024 17:20 - <a href="test.html">test</a></li>
-        </ul>
+  <script>
+    const container = document.getElementById('blog-container');
 
-    </div>
+    async function loadPost(file, push = true) {
+      try {
+        const res = await fetch('posts/' + file);
+        const html = await res.text();
+        container.innerHTML = html;
+
+        if (push) {
+          history.pushState({ file }, '', `/posts/${file}`);
+        }
+      } catch (e) {
+        container.innerHTML = '<p>⚠️ Failed to load blog post.</p>';
+        console.error(e);
+      }
+    }
+
+    // Intercept clicks on blog links
+    document.querySelectorAll('a[data-post]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const file = link.getAttribute('data-post');
+        loadPost(file);
+      });
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', e => {
+      if (e.state?.file) {
+        loadPost(e.state.file, false);
+      } else {
+        container.innerHTML = '<p>Select a blog post to read it here...</p>';
+      }
+    });
+
+    // On page load, handle direct links like /posts/post1.html
+    window.addEventListener('DOMContentLoaded', () => {
+      const path = location.pathname;
+      const match = path.match(/\/posts\/(.+\.html)/);
+      if (match) {
+        loadPost(match[1], false);
+      }
+    });
+  </script>
 </body>
 </html>
