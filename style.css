@@ -2,7 +2,7 @@
 .main-body {
     font-family: 'Times New Roman', Times, serif;
     background-color: #282828; 
-    color: #cccccc; /* Black text */
+    color: #cccccc; 
     margin: 0;
     padding: 0;
     display: flex;
@@ -15,16 +15,16 @@
     color:#cccccc
 }
 
-/* Center container with gray background in the middle */
+
 .center-container {
     padding: 40px;
     text-align: center;
-    width: 100%; /* Ensure responsiveness */
+    width: 100%; 
 }
 
-/* Logo styling */
+
 .logo {
-    max-width: 200px; /* Adjust the size as needed */
+    max-width: 200px; 
     margin-bottom: 20px;
 }
 
@@ -85,6 +85,9 @@ nav ul li a {
     top: 0; /* Start from the top */
 }
 /* Blog list styling */
+.blog-body{
+    background-color: #282828;
+}
 .blog-list {
     list-style-type: none;
     padding: 0;
@@ -107,12 +110,10 @@ nav ul li a {
     color: #00ab9f;
 }
 .blog-container {
-    background-color: #222222;
     padding: 40px;
     width: 80%;
     margin: 40px auto;
     text-align: left;
-    border: 1px solid #000000;
     border-radius: 5px;
 }
 

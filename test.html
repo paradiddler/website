@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Blog</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #blog-container {
+      margin-top: 2rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Blog</h1>
+  <ul>
+    <li><a href="/posts/cool-music.html" data-post="cool-musics.html">🛠 How I Built My First Robot</a></li>
+    <li><a href="/posts/post2.html" data-post="post2.html">📉 Lessons from a Failed Project</a></li>
+  </ul>
+
+  <div id="blog-container">
+    <p>Select a blog post to read it here...</p>
+  </div>
+
+  <script>
+    const container = document.getElementById('blog-container');
+
+    async function loadPost(file, push = true) {
+      try {
+        const res = await fetch('posts/' + file);
+        const html = await res.text();
+        container.innerHTML = html;
+
+        if (push) {
+          history.pushState({ file }, '', `/posts/${file}`);
+        }
+      } catch (e) {
+        container.innerHTML = '<p>⚠️ Failed to load blog post.</p>';
+        console.error(e);
+      }
+    }
+
+    // Intercept clicks on blog links
+    document.querySelectorAll('a[data-post]').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const file = link.getAttribute('data-post');
+        loadPost(file);
+      });
+    });
+
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', e => {
+      if (e.state?.file) {
+        loadPost(e.state.file, false);
+      } else {
+        container.innerHTML = '<p>Select a blog post to read it here...</p>';
+      }
+    });
+
+    // On page load, handle direct links like /posts/post1.html
+    window.addEventListener('DOMContentLoaded', () => {
+      const path = location.pathname;
+      const match = path.match(/\/posts\/(.+\.html)/);
+      if (match) {
+        loadPost(match[1], false);
+      }
+    });
+  </script>
+</body>
+</html>
