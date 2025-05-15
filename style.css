@@ -137,6 +137,7 @@ nav ul li a {
   background-color: #1f1f1f;
   padding: 0 20px 20px 0; 
   border-left: 1px solid #444;
+  margin-left: 20px;
   min-height: 400px;
   overflow: auto;
   }
