@@ -134,10 +134,27 @@ nav ul li a {
   /* Blog content on the right */
   #blog-container {
     flex-grow: 1;
-    background-color: #1f1f1f;
-    padding: 20px;
-    border-left: 1px solid #444;
-    min-height: 400px;
+  background-color: #1f1f1f;
+  padding: 0 20px 20px 0; 
+  border-left: 1px solid #444;
+  min-height: 400px;
+  overflow: auto;
+  }
+  #blog-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #blog-container::-webkit-scrollbar-track {
+    background: #1f1f1f; /* matches blog content bg */
+  }
+  
+  #blog-container::-webkit-scrollbar-thumb {
+    background-color: #555; 
+    border-radius: 4px;
+  }
+  
+  #blog-container::-webkit-scrollbar-thumb:hover {
+    background: #777;
   }
 
 /* Simple fade-in animation */
