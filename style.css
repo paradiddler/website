@@ -90,7 +90,7 @@ nav ul li a {
     font-family: 'Times New Roman', Times, serif;
     background-color: #282828; 
     color: #cccccc; 
-    margin: 0;
+    margin: 5%;
     padding: 10px;
     display: flex;
     justify-content: left;
