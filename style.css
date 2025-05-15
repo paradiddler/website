@@ -164,4 +164,31 @@ nav ul li a {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+@media (max-width: 768px) {
+    .blog-layout {
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .blog-sidebar {
+      width: 100%;
+    }
+  
+    #blog-container {
+      margin-left: 0;
+      border-left: none;
+      padding: 10px;
+    }
+  
+    .blog-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .blog-list a {
+      font-size: 18px;
+    }
+  }
 
