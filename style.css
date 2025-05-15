@@ -98,15 +98,6 @@ nav ul li a {
     height: 100vh;
     flex-direction: column;
 }
-.blog-sidebar {
-    flex-shrink: 0;
-    width: 250px;
-  }
-.blog-list {
-    list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
 
 .blog-list li {
     margin-bottom: 10px;
@@ -120,13 +111,6 @@ nav ul li a {
 .blog-list a:hover {
     color: #00ab9f;
 }
-#blog-container {
-    flex-grow: 1;
-  padding: 20px;
-  background-color: #1f1f1f;
-  border-left: 1px solid #444;
-  min-height: 400px;
-}
 .blog-layout {
     display: flex;
     flex-direction: row;
@@ -134,6 +118,26 @@ nav ul li a {
     padding: 40px;
     align-items: flex-start;
     height: auto;
+  }
+  
+  /* Sidebar includes title + blog list */
+  .blog-sidebar {
+    flex-shrink: 0;
+    width: 250px;
+  }
+  
+  .blog-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  #blog-container {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-left: 1px solid #444;
+    min-height: 400px;
   }
 
 /* Simple fade-in animation */
