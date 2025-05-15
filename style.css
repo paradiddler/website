@@ -103,6 +103,7 @@ nav ul li a {
     padding: 0;
     text-align: left;
     max-width: 400px;
+    flex-shrink: 0;
 }
 
 .blog-list li {
@@ -117,13 +118,24 @@ nav ul li a {
 .blog-list a:hover {
     color: #00ab9f;
 }
-.blog-container {
-    padding: 40px;
+#blog-container {
+    flex-grow: 1;
+    padding: 20px;
     width: 80%;
     margin: 40px auto;
     text-align: left;
     border-radius: 5px;
+    border-left: 1px solid #444;
+    overflow-y: auto;
 }
+.blog-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    height: calc(100vh - 100px); /* adjust based on your header height */
+    padding: 20px;
+    overflow: auto;
+  }
 
 /* Simple fade-in animation */
 @keyframes fadein {
