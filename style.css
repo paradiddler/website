@@ -135,11 +135,12 @@ nav ul li a {
   #blog-container {
     flex-grow: 1;
   background-color: #1f1f1f;
-  padding: 0 20px 20px 0; 
+  padding: 20px 40px; /* adds padding inside the box */
   border-left: 1px solid #444;
-  margin-left: 20px;
   min-height: 400px;
   overflow: auto;
+  margin-left: 10px; /* adds a small gap between the border and content */
+  box-sizing: border-box;
   }
   #blog-container::-webkit-scrollbar {
     width: 8px;
