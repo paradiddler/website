@@ -98,12 +98,14 @@ nav ul li a {
     height: 100vh;
     flex-direction: column;
 }
-.blog-list {
-    list-style-type: none;
-    padding: 0;
-    text-align: left;
-    max-width: 400px;
+.blog-sidebar {
     flex-shrink: 0;
+    width: 250px;
+  }
+.blog-list {
+    list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
 .blog-list li {
@@ -120,21 +122,18 @@ nav ul li a {
 }
 #blog-container {
     flex-grow: 1;
-    padding: 20px;
-    width: 80%;
-    margin: 40px auto;
-    text-align: left;
-    border-radius: 5px;
-    border-left: 1px solid #444;
-    overflow-y: auto;
+  padding: 20px;
+  background-color: #1f1f1f;
+  border-left: 1px solid #444;
+  min-height: 400px;
 }
 .blog-layout {
     display: flex;
     flex-direction: row;
     gap: 40px;
-    height: calc(100vh - 100px); /* adjust based on your header height */
-    padding: 20px;
-    overflow: auto;
+    padding: 40px;
+    align-items: flex-start;
+    height: auto;
   }
 
 /* Simple fade-in animation */
