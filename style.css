@@ -90,13 +90,11 @@ nav ul li a {
     font-family: 'Times New Roman', Times, serif;
     background-color: #282828; 
     color: #cccccc; 
-    margin: 5%;
-    padding: 10px;
-    display: flex;
+    margin: 0;
+    padding: 0;
     justify-content: left;
     align-items: left;
     height: 100vh;
-    flex-direction: column;
 }
 
 .blog-list li {
@@ -111,31 +109,33 @@ nav ul li a {
 .blog-list a:hover {
     color: #00ab9f;
 }
+/* Flex container for layout */
 .blog-layout {
     display: flex;
     flex-direction: row;
+    align-items: flex-start; /* Align top edges */
     gap: 40px;
     padding: 40px;
-    align-items: flex-start;
-    height: auto;
   }
   
-  /* Sidebar includes title + blog list */
+  /* Sidebar on the left */
   .blog-sidebar {
-    flex-shrink: 0;
     width: 250px;
+    flex-shrink: 0;
   }
   
+  /* Blog links list */
   .blog-list {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
+    padding-left: 0;
     margin-top: 20px;
   }
   
+  /* Blog content on the right */
   #blog-container {
     flex-grow: 1;
-    padding: 20px;
     background-color: #1f1f1f;
+    padding: 20px;
     border-left: 1px solid #444;
     min-height: 400px;
   }
