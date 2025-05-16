@@ -15,7 +15,10 @@ a{
     color:#a8a8a8;
     text-decoration: underline;
 }
-
+.profile-photo{
+    width: 25%;
+    height: 25%;
+}
 
 .center-container {
     padding: 40px;

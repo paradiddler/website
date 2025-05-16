@@ -18,11 +18,24 @@
             <p>
                 Nazmi is an undergraduate student at KU Leuven, Bachelors of Engineering Technologies.
             </p>
-            <img src="images/nazmi.jpg" alt="Nazmi" class="profile-photo">
+            <img id="random-image" src="" alt="Nazmi" class="profile-photo">
         </section>
         <div id="nazmi-text">Nazmi</div>
     </main>
 
 <script src="script.js">text</script>
+<script>
+const images = [
+    '1.jpg',
+    '2.jpg',
+    '3.jpg',
+    '4.jpg'
+  ];
+  
+  // Pick a random one
+  const randomImage = images[Math.floor(Math.random() * images.length)];
+  
+  // Set it as the src
+  document.getElementById('random-image').src = 'images/' + randomImage;</script>
 </body>
 </html>
