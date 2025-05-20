@@ -17,6 +17,7 @@
       <div class="blog-sidebar">
         <h1>nazmi blog</h1>
         <ul class="blog-list">
+          <li><a href="#" data-post="kul.html">a year in leuven</a></li>
           <li><a href="#" data-post="buy me these.html">list of things i want</a></li>
           <li><a href="#" data-post="cool-music.html">cool music</a></li>
           <li><a href="#" data-post="hello-web_2024-10-20-1420.html">hello web</a></li>
@@ -25,7 +26,7 @@
   
       <!-- RIGHT: Blog post content -->
       <div id="blog-container">
-        <p>evet</p>
+        <p>click a blog to read here, or dont</p>
       </div>
   
     </div>
@@ -46,7 +47,7 @@
           history.pushState({ file }, '', newUrl);
         }
       } catch (e) {
-        container.innerHTML = '<p>⚠️ Failed to load blog post.</p>';
+        container.innerHTML = '<p>Failed to load blog post.</p>';
         console.error(e);
       }
     }
