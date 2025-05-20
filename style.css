@@ -107,8 +107,12 @@ nav ul li a {
 .blog-list a {
     color: #888888;
     font-size: 20px;
+    text-decoration-thickness: 1px;
 }
-
+.title-link a {
+  color: #cccccc;
+  text-decoration-thickness: 1px;
+}
 .blog-list a:hover {
     color: #00ab9f;
 }
