@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+  <title>rdlayıcı</title>
+  <style>
+    textarea {
+      width: 100%;
+      max-width: 600px;
+      height: 100px;
+      font-size: 16px;
+      padding: 10px;
+      margin-bottom: 10px;
+      background:#1e1e1e;
+      color: #cccccc;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 600px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body class="main-body">
+  <h1>rdlayıcı</h1>
+  <textarea id="input" maxlength="231" placeholder="enter your text (max 231 chars)..."></textarea><br>
+  <button onclick="convertText()">convert</button>
+  <div class="output" id="output"></div>
+
+  <script>
+    function convertText() {
+      const input = document.getElementById('input').value;
+      const words = input.split(/(\s+)/); // preserve spaces
+
+      const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+      const converted = words.map(word => {
+        if (/\w/.test(word)) {
+          let w = word;
+
+          w = w.replace(/rd/gi, match => "RD");
+
+          const lower = w.toLowerCase();
+
+          if (lower.endsWith("rt")) {
+            const base = w.slice(0, -2);
+            const before = base.slice(-1).toLowerCase();
+            if (vowels.includes(before)) return base + "RD";
+            return w;
+          }
+
+          if (lower.endsWith("t")) {
+            const base = w.slice(0, -1);
+            const before = base.slice(-1).toLowerCase();
+            if (vowels.includes(before)) return base + "RD";
+            return w;
+          }
+
+          return w;
+        } else {
+          return word;
+        }
+      });
+
+      document.getElementById('output').textContent = converted.join('');
+    }
+  </script>
+</body>
+</html>
